@@ -60,6 +60,8 @@
           $this->load->view('/admin/viewUser');
           $this->load->view('templates/footer');
         }
+
+        
       //TODO generating fields for editin user data
       /*$fields = array(
         array(
