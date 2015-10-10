@@ -1,0 +1,13 @@
+{
+  "uploadOnSave": true,
+  "hostname": "ftp.nemanjadjokic.com",
+  "target": "/public_html/diplomski.nemanjadjokic.com",
+  "ignore": [
+    "/config",
+    ".remote-sync.json"
+  ],
+  "username": "diplomski@nemanjadjokic.com",
+  "transport": "ftp",
+  "password": "tr00p3r84",
+  "port": "21"
+}

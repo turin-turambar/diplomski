@@ -1,0 +1,17 @@
+<div class="container">
+    <?php 
+        echo heading('2');
+        echo validation_errors();
+        echo form_open();
+    ?>
+    <fieldset class="loginForm">
+        <label for="username">Korisničko ime</label>
+        <?php echo form_input('username'); echo br();?>
+        <label for="password">Lozinka</label>
+        <?php
+            echo form_password('password');
+            echo br();
+            echo form_submit('login','Uloguj se');
+        ?>
+    </fieldset>
+</div>

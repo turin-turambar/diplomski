@@ -1,0 +1,11 @@
+{
+  "transport": "ftp",
+  "hostname": "10.10.10.10",
+  "port": 21,
+  "username": "vagrant",
+  "password": "vagrant",
+  "target": "/home/vagrant/dirname/subdirname",
+  "ignore": [
+    ".git/**"
+  ]
+}
