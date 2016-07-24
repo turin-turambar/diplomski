@@ -1,0 +1,242 @@
+!SESSION 2016-01-13 19:35:07.754 -----------------------------------------------
+eclipse.buildId=3.7.2.201511261048-RELEASE-e45
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide -product org.springsource.sts.ide -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide -product org.springsource.sts.ide -data C:\xampp\htdocs\diplomski -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-01-13 19:35:15.989
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Nemanja'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.php.core 4 10001 2016-01-13 19:35:18.754
+!MESSAGE PHPCore plugin internal error
+!STACK 1
+org.eclipse.dltk.core.ModelException: RemoteSystemsTempFiles does not exist
+	at org.eclipse.dltk.internal.core.ModelElement.newNotPresentException(ModelElement.java:270)
+	at org.eclipse.dltk.internal.core.ModelManager.getPerProjectInfoCheckExistence(ModelManager.java:938)
+	at org.eclipse.dltk.internal.core.ScriptProject.getPerProjectInfo(ScriptProject.java:545)
+	at org.eclipse.dltk.internal.core.ScriptProject.getResolvedBuildpath(ScriptProject.java:292)
+	at org.eclipse.dltk.internal.core.ScriptProject.buildStructure(ScriptProject.java:511)
+	at org.eclipse.dltk.internal.core.Openable.generateInfos(Openable.java:195)
+	at org.eclipse.dltk.internal.core.ModelElement.openWhenClosed(ModelElement.java:196)
+	at org.eclipse.dltk.internal.core.ModelElement.getElementInfo(ModelElement.java:183)
+	at org.eclipse.dltk.internal.core.ModelElement.getChildren(ModelElement.java:368)
+	at org.eclipse.dltk.internal.core.ModelElement.getChildren(ModelElement.java:363)
+	at org.eclipse.dltk.internal.core.ScriptProject.getProjectFragments(ScriptProject.java:1535)
+	at org.eclipse.php.internal.core.PHPCorePlugin.reindexAllProjects(PHPCorePlugin.java:213)
+	at org.eclipse.php.internal.core.PHPCorePlugin.checkStructureVersionAndReindex(PHPCorePlugin.java:195)
+	at org.eclipse.php.internal.core.PHPCorePlugin.access$5(PHPCorePlugin.java:177)
+	at org.eclipse.php.internal.core.PHPCorePlugin$1.run(PHPCorePlugin.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-01-13 19:35:18.755
+!MESSAGE RemoteSystemsTempFiles does not exist
+
+!ENTRY org.eclipse.php.debug.core 4 4 2016-01-13 19:35:18.791
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.wst.validation 4 0 2016-01-13 19:37:50.656
+!MESSAGE IWAE0027E Could not retrieve the validation configuration for resource  .
+!STACK 0
+java.lang.reflect.InvocationTargetException: IWAE0027E Could not retrieve the validation configuration for resource  .
+	at org.eclipse.wst.validation.internal.ConfigurationManager.getProjectConfiguration(ConfigurationManager.java:135)
+	at org.eclipse.wst.validation.internal.ConfigurationManager.getConfiguration(ConfigurationManager.java:251)
+	at org.eclipse.wst.validation.internal.ValManager.getValidatorsNotCached(ValManager.java:226)
+	at org.eclipse.wst.validation.internal.ValManager.access$1(ValManager.java:220)
+	at org.eclipse.wst.validation.internal.ValManager$ValidatorCache.getValidatorsCached(ValManager.java:1263)
+	at org.eclipse.wst.validation.internal.ValManager.getValidators(ValManager.java:197)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:797)
+	at org.eclipse.wst.validation.internal.DisabledValidatorManager$DisabledValidationFinder.findDisabledValidatorsFor(DisabledValidatorManager.java:109)
+	at org.eclipse.wst.validation.internal.DisabledValidatorManager.getDisabledValidatorsFor(DisabledValidatorManager.java:62)
+	at org.eclipse.wst.validation.ValidationFramework.getDisabledValidatorsFor(ValidationFramework.java:232)
+	at org.eclipse.php.internal.ui.editor.ASTProvider.isValidatorDisabled(ASTProvider.java:600)
+	at org.eclipse.php.internal.ui.editor.ASTProvider.isReconciling(ASTProvider.java:583)
+	at org.eclipse.php.internal.ui.editor.ASTProvider.getAST(ASTProvider.java:497)
+	at org.eclipse.php.ui.editor.SharedASTProvider.getAST(SharedASTProvider.java:143)
+	at org.eclipse.php.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:169)
+	at org.eclipse.php.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource '/ ' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:334)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:208)
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:140)
+	at org.eclipse.core.internal.resources.Resource.checkAccessibleAndLocal(Resource.java:214)
+	at org.eclipse.core.internal.resources.Resource.getSessionProperty(Resource.java:1206)
+	at org.eclipse.wst.validation.internal.ConfigurationManager.getProjectConfiguration(ConfigurationManager.java:126)
+	... 16 more
+Root exception:
+org.eclipse.core.internal.resources.ResourceException: Resource '/ ' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:334)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:208)
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:140)
+	at org.eclipse.core.internal.resources.Resource.checkAccessibleAndLocal(Resource.java:214)
+	at org.eclipse.core.internal.resources.Resource.getSessionProperty(Resource.java:1206)
+	at org.eclipse.wst.validation.internal.ConfigurationManager.getProjectConfiguration(ConfigurationManager.java:126)
+	at org.eclipse.wst.validation.internal.ConfigurationManager.getConfiguration(ConfigurationManager.java:251)
+	at org.eclipse.wst.validation.internal.ValManager.getValidatorsNotCached(ValManager.java:226)
+	at org.eclipse.wst.validation.internal.ValManager.access$1(ValManager.java:220)
+	at org.eclipse.wst.validation.internal.ValManager$ValidatorCache.getValidatorsCached(ValManager.java:1263)
+	at org.eclipse.wst.validation.internal.ValManager.getValidators(ValManager.java:197)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:797)
+	at org.eclipse.wst.validation.internal.DisabledValidatorManager$DisabledValidationFinder.findDisabledValidatorsFor(DisabledValidatorManager.java:109)
+	at org.eclipse.wst.validation.internal.DisabledValidatorManager.getDisabledValidatorsFor(DisabledValidatorManager.java:62)
+	at org.eclipse.wst.validation.ValidationFramework.getDisabledValidatorsFor(ValidationFramework.java:232)
+	at org.eclipse.php.internal.ui.editor.ASTProvider.isValidatorDisabled(ASTProvider.java:600)
+	at org.eclipse.php.internal.ui.editor.ASTProvider.isReconciling(ASTProvider.java:583)
+	at org.eclipse.php.internal.ui.editor.ASTProvider.getAST(ASTProvider.java:497)
+	at org.eclipse.php.ui.editor.SharedASTProvider.getAST(SharedASTProvider.java:143)
+	at org.eclipse.php.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:169)
+	at org.eclipse.php.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.php.core 4 10001 2016-01-13 19:38:39.719
+!MESSAGE PHPCore plugin internal error
+!STACK 1
+org.eclipse.dltk.core.ModelException:   does not exist
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:760)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:404)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:369)
+	at org.eclipse.php.internal.core.model.PerFileModelAccessCache.getSuperTypeHierarchy(PerFileModelAccessCache.java:62)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.internalResolve(PHPSelectionEngine.java:884)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.select(PHPSelectionEngine.java:162)
+	at org.eclipse.dltk.internal.core.Openable.codeSelect(Openable.java:662)
+	at org.eclipse.dltk.internal.core.Openable.codeSelect(Openable.java:678)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelect(AbstractSourceModule.java:85)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelect(AbstractSourceModule.java:76)
+	at org.eclipse.php.internal.ui.editor.hover.AbstractPHPEditorTextHover.getElementsAt(AbstractPHPEditorTextHover.java:102)
+	at org.eclipse.php.internal.ui.editor.hover.PHPDocumentationHover.internalGetHoverInfo(PHPDocumentationHover.java:488)
+	at org.eclipse.php.internal.ui.editor.hover.PHPDocumentationHover.getHoverInfo2(PHPDocumentationHover.java:483)
+	at org.eclipse.php.internal.ui.editor.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.php.internal.ui.editor.hover.PHPTextHoverProxy.getHoverInfo2(PHPTextHoverProxy.java:77)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-01-13 19:38:39.719
+!MESSAGE   does not exist
+
+!ENTRY org.eclipse.php.core 4 10001 2016-01-13 19:38:39.727
+!MESSAGE PHPCore plugin internal error
+!STACK 1
+org.eclipse.dltk.core.ModelException:   does not exist
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:760)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:404)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:369)
+	at org.eclipse.php.internal.core.model.PerFileModelAccessCache.getSuperTypeHierarchy(PerFileModelAccessCache.java:62)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.internalResolve(PHPSelectionEngine.java:884)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.select(PHPSelectionEngine.java:162)
+	at org.eclipse.dltk.internal.core.Openable.codeSelect(Openable.java:662)
+	at org.eclipse.dltk.internal.core.Openable.codeSelectAll(Openable.java:686)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:96)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:90)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:1)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:142)
+	at org.eclipse.php.internal.ui.editor.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:139)
+	at org.eclipse.php.internal.ui.editor.hover.PHPTextHoverProxy.getHoverInfo2(PHPTextHoverProxy.java:77)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-01-13 19:38:39.728
+!MESSAGE   does not exist
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2016-01-13 19:46:10.269
+!MESSAGE cacheFile=file:/C:/xampp/htdocs/diplomski/.metadata/.plugins/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml
+
+!ENTRY org.eclipse.php.debug.core 4 4 2016-01-13 19:52:15.186
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2016-01-13 19:52:20.641
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2016-01-13 19:52:28.586
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.core 4 10001 2016-01-13 19:52:39.182
+!MESSAGE PHPCore plugin internal error
+!STACK 1
+org.eclipse.dltk.core.ModelException:   does not exist
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:760)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:404)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:369)
+	at org.eclipse.php.internal.core.model.PerFileModelAccessCache.getSuperTypeHierarchy(PerFileModelAccessCache.java:62)
+	at org.eclipse.php.internal.core.typeinference.evaluators.ClassVariableDeclarationEvaluator.resolveMagicClassVariableDeclaration(ClassVariableDeclarationEvaluator.java:211)
+	at org.eclipse.php.internal.core.typeinference.evaluators.ClassVariableDeclarationEvaluator.init(ClassVariableDeclarationEvaluator.java:144)
+	at org.eclipse.dltk.ti.GoalEngine.evaluateGoal(GoalEngine.java:220)
+	at org.eclipse.dltk.ti.DefaultTypeInferencer.evaluateType(DefaultTypeInferencer.java:223)
+	at org.eclipse.dltk.ti.DefaultTypeInferencer.evaluateType(DefaultTypeInferencer.java:231)
+	at org.eclipse.php.internal.core.typeinference.PHPTypeInferenceUtils.resolveExpression(PHPTypeInferenceUtils.java:100)
+	at org.eclipse.php.internal.core.typeinference.PHPTypeInferenceUtils.resolveExpression(PHPTypeInferenceUtils.java:90)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.processPHPCallExpression(PHPSelectionEngine.java:925)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.internalASTResolve(PHPSelectionEngine.java:309)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.select(PHPSelectionEngine.java:117)
+	at org.eclipse.dltk.internal.core.Openable.codeSelect(Openable.java:662)
+	at org.eclipse.dltk.internal.core.Openable.codeSelectAll(Openable.java:686)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:96)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:90)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:1)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:142)
+	at org.eclipse.php.internal.ui.editor.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:139)
+	at org.eclipse.php.internal.ui.editor.hover.PHPTextHoverProxy.getHoverInfo2(PHPTextHoverProxy.java:77)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-01-13 19:52:39.182
+!MESSAGE   does not exist
+
+!ENTRY org.eclipse.php.core 4 10001 2016-01-13 19:52:45.475
+!MESSAGE PHPCore plugin internal error
+!STACK 1
+org.eclipse.dltk.core.ModelException:   does not exist
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:760)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:404)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:369)
+	at org.eclipse.php.internal.core.model.PerFileModelAccessCache.getSuperTypeHierarchy(PerFileModelAccessCache.java:62)
+	at org.eclipse.php.internal.core.typeinference.evaluators.ClassVariableDeclarationEvaluator.resolveMagicClassVariableDeclaration(ClassVariableDeclarationEvaluator.java:211)
+	at org.eclipse.php.internal.core.typeinference.evaluators.ClassVariableDeclarationEvaluator.init(ClassVariableDeclarationEvaluator.java:144)
+	at org.eclipse.dltk.ti.GoalEngine.evaluateGoal(GoalEngine.java:220)
+	at org.eclipse.dltk.ti.DefaultTypeInferencer.evaluateType(DefaultTypeInferencer.java:223)
+	at org.eclipse.dltk.ti.DefaultTypeInferencer.evaluateType(DefaultTypeInferencer.java:231)
+	at org.eclipse.php.internal.core.typeinference.PHPTypeInferenceUtils.resolveExpression(PHPTypeInferenceUtils.java:100)
+	at org.eclipse.php.internal.core.typeinference.PHPTypeInferenceUtils.resolveExpression(PHPTypeInferenceUtils.java:90)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.processPHPCallExpression(PHPSelectionEngine.java:925)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.internalASTResolve(PHPSelectionEngine.java:309)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.select(PHPSelectionEngine.java:117)
+	at org.eclipse.dltk.internal.core.Openable.codeSelect(Openable.java:662)
+	at org.eclipse.dltk.internal.core.Openable.codeSelect(Openable.java:678)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelect(AbstractSourceModule.java:85)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelect(AbstractSourceModule.java:76)
+	at org.eclipse.php.internal.ui.editor.hover.AbstractPHPEditorTextHover.getElementsAt(AbstractPHPEditorTextHover.java:102)
+	at org.eclipse.php.internal.ui.editor.hover.PHPDocumentationHover.internalGetHoverInfo(PHPDocumentationHover.java:488)
+	at org.eclipse.php.internal.ui.editor.hover.PHPDocumentationHover.getHoverInfo2(PHPDocumentationHover.java:483)
+	at org.eclipse.php.internal.ui.editor.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.php.internal.ui.editor.hover.PHPTextHoverProxy.getHoverInfo2(PHPTextHoverProxy.java:77)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-01-13 19:52:45.475
+!MESSAGE   does not exist
+
+!ENTRY org.eclipse.php.core 4 10001 2016-01-13 19:52:45.481
+!MESSAGE PHPCore plugin internal error
+!STACK 1
+org.eclipse.dltk.core.ModelException:   does not exist
+	at org.eclipse.dltk.internal.core.ModelOperation.runOperation(ModelOperation.java:760)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:404)
+	at org.eclipse.dltk.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:369)
+	at org.eclipse.php.internal.core.model.PerFileModelAccessCache.getSuperTypeHierarchy(PerFileModelAccessCache.java:62)
+	at org.eclipse.php.internal.core.typeinference.evaluators.ClassVariableDeclarationEvaluator.resolveMagicClassVariableDeclaration(ClassVariableDeclarationEvaluator.java:211)
+	at org.eclipse.php.internal.core.typeinference.evaluators.ClassVariableDeclarationEvaluator.init(ClassVariableDeclarationEvaluator.java:144)
+	at org.eclipse.dltk.ti.GoalEngine.evaluateGoal(GoalEngine.java:220)
+	at org.eclipse.dltk.ti.DefaultTypeInferencer.evaluateType(DefaultTypeInferencer.java:223)
+	at org.eclipse.dltk.ti.DefaultTypeInferencer.evaluateType(DefaultTypeInferencer.java:231)
+	at org.eclipse.php.internal.core.typeinference.PHPTypeInferenceUtils.resolveExpression(PHPTypeInferenceUtils.java:100)
+	at org.eclipse.php.internal.core.typeinference.PHPTypeInferenceUtils.resolveExpression(PHPTypeInferenceUtils.java:90)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.processPHPCallExpression(PHPSelectionEngine.java:925)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.internalASTResolve(PHPSelectionEngine.java:309)
+	at org.eclipse.php.internal.core.codeassist.PHPSelectionEngine.select(PHPSelectionEngine.java:117)
+	at org.eclipse.dltk.internal.core.Openable.codeSelect(Openable.java:662)
+	at org.eclipse.dltk.internal.core.Openable.codeSelectAll(Openable.java:686)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:96)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:90)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.codeSelectAll(AbstractSourceModule.java:1)
+	at org.eclipse.dltk.internal.ui.text.hover.AbstractScriptEditorTextHover.getHoverInfo(AbstractScriptEditorTextHover.java:142)
+	at org.eclipse.php.internal.ui.editor.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:139)
+	at org.eclipse.php.internal.ui.editor.hover.PHPTextHoverProxy.getHoverInfo2(PHPTextHoverProxy.java:77)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-01-13 19:52:45.481
+!MESSAGE   does not exist

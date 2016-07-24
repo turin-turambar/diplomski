@@ -2,7 +2,7 @@
   $attributes = array(
       'class' => 'form-horizontal'
   );
-  echo form_open('', $attributes);
+  echo form_open('admin/changeUserData', $attributes);
 ?>
 <fieldset>
   <div class="control-group">

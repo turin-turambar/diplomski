@@ -35,18 +35,23 @@
 
 		public function index($page = 'home'){
 			$data['path'] = '/users/members';
-			$data['username'] = $this->session->userdata('username');
+			$data['title'] = ucfirst('naslovna'); // Capitalize the first letter
 			if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php')){
 		// Whoops, we don't have a page for that!
 				show_404();
 			}
-
-			//$this->news();
-			$data['title'] = ucfirst('naslovna'); // Capitalize the first letter
-
-			$this->load->view('templates/header', $data);
-			$this->load->view('pages/'.$page, $data);
-			$this->load->view('templates/footer', $data);
+			if ($this->session->userdata('is_loged_in')) {
+				$data['username'] = $this->session->userdata('username');
+				$this->load->view('templates/header', $data);
+				$this->load->view('pages/'.$page, $data);
+				$this->load->view('templates/footer', $data);
+			}else{
+				$data['username'] = "Uloguj se";
+				//$this->news();
+				$this->load->view('templates/header', $data);
+				$this->load->view('pages/'.$page, $data);
+				$this->load->view('templates/footer');
+			}
 		}
 
 		public function news(){

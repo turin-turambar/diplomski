@@ -6,4 +6,5 @@
   echo "Prezime: ".$userdata['last_name']."<br>";
   echo "E-mail: ".$userdata['email']."<br>";
   echo "Član protala od: ".$userdata['registered']."<br>";
+  echo "Role ID: ".$userdata['role_id']."<br>";
 ?>

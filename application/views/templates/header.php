@@ -35,7 +35,12 @@
 			echo anchor('messages/inbox', 'Poruke');*/
 		?>
 		<ul class="nav nav-pills">
-			<li role="presentation">
+      <li>
+        <?php
+          echo anchor('/', 'Naslovna');
+        ?>
+      </li>
+      <li role="presentation">
 				<?php
 					echo anchor('/news', 'Obaveštenja');
 				?>
@@ -58,6 +63,13 @@
 			<li>
 				<?php
 					echo anchor($path, $username);
+				?>
+			</li>
+			<li>
+				<?php 
+				if ($role_path != NULL) {
+					echo anchor($role_path, $role);
+				}
 				?>
 			</li>
 		</ul>

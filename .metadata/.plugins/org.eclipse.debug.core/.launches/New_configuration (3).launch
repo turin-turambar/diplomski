@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.php.debug.core.launching.webPageLaunch">
+<stringAttribute key="debugPages" value="debugAllPages"/>
+</launchConfiguration>

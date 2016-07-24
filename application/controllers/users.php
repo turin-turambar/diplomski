@@ -5,16 +5,29 @@
 	*/
 	class Users extends CI_Controller{
 
-		/*function __construct()
+		function __construct()
 		{
 			parent::__construct();
-			if (! $this->session->userdata('is_loged_in')) {
-        redirect('/users/login');
-      }
-      if ($role_id != 1) {
-        show_404();
-      }
-		}*/
+				$this->load->model('users_model');
+			    $this->load->helper('array');
+			    $username = $this->session->userdata('username');
+			    $user_data = $this->users_model->get_user_data($username);
+			    $role_id = element('role_id', $user_data);
+			    if ($role_id == 1) {
+			    	$this->role = 'Admin panel';
+			    	$this->role_path = '/admin';
+			    }else{
+				    $this->role = NULL;
+				    $this->role_path = NULL;
+			    }
+			//if (! $this->session->userdata('is_loged_in')) {
+        	//	redirect('/users/login');
+      		//}
+
+		    //if ($role_id != 1) {
+		    //	show_404();
+		    //}
+		}
 
 		public function index()
 		{
@@ -25,9 +38,11 @@
 		{
 			//$this->load->helper('form');
 			//$this->load->library('form_validation');
+			$data['role'] = $this->role;
+      		$data['role_path'] = $this->role_path;
 			$sessionData = array(
 				'username'		=>	$this->input->post('username'),
-				 'is_loged_in'	=>	1
+				'is_loged_in'	=>	1
 			);
 			$data['title'] = 'Uloguj se';
 			$data['username'] = 'Ulogujte se';
@@ -66,6 +81,16 @@
       $username = $this->session->userdata('username');
       $user_data = $this->users_model->get_user_data($username);
       $role_id = element('role_id', $user_data);
+
+            //Adds menu option for seeing username and link to user profile
+            $data['username'] = $this->session->userdata('username');
+            $data['path'] = '/users/members';
+
+
+            //Adds menu option for admin
+            $data['role'] = $this->role;
+            $data['role_path'] = $this->role_path;
+
 			if ($role_id != 1) {
 				show_404(); //TODO
 			}else{
@@ -74,27 +99,27 @@
 					array(
 						'field' =>	'username',
 						'label'	=>	'Korisničko ime',
-						'rules'	=>	 'required|min_length[3]|max_length[25]|is_unique[users.username]|trim|xss_clean'),
+						'rules'	=>	'required|min_length[3]|max_length[25]|is_unique[users.username]|trim|xss_clean'),
 					array(
 						'field' =>	'password',
 						'label'	=>	'Lozinka',
-						'rules'	=>	 'required|trim|min_length[8]|'),
+						'rules'	=>	'required|trim|min_length[8]|'),
 					array(
 						'field' =>	'repeatPassword',
 						'label'	=>	'Ponovljena lozinka',
-						'rules'	=>	 'required|trim|min_length[8]|matches[password]'),
+						'rules'	=>	'required|trim|min_length[8]|matches[password]'),
 					array(
 						'field' =>	'email',
 						'label'	=>	'Email adresa',
-						'rules'	=>	 'required|valid_email|trim'),
+						'rules'	=>	'required|valid_email|trim'),
 					array(
 						'field' =>	'first_name',
 						'label'	=>	'Ime',
-						'rules'	=>	 'required|trim|min_length[3]'),
+						'rules'	=>	'required|trim|min_length[3]'),
 					array(
 						'field' =>	'last_name',
 						'label'	=>	'Prezime',
-						'rules'	=>	 'required|trim|min_length[3]'),
+						'rules'	=>	'required|trim|min_length[3]'),
 				);
 
 				$this->form_validation->set_rules($config);
@@ -106,41 +131,14 @@
 				} else {
 					//$this->load->model('users_model');
 
-					/*
-					//send an email to the user
-					$this->load->library('email', array('mailtype'	=> 'html'));
-					$this->email->from('no-reply@nemanjadjokic.com', 'No-reply, nemanjadokic.com');
-					$this->email->to($this->input->post('email'));
-					$this->email->subject('Dobrodošli na nastavnički portal Visoke škole tehničkih strukovnih studija');
-					$message = '<h3>Hvala Vam na registraciji</h3>
-					<p>Ispod se nalaze podaci koje ste unali prilikom registracije. Ukoliko su podaci tačni, potrvrdite Vašu registraciju klikom
-					na link ispod. Ukoliko se niste registrovali na portalu, pišite administratoru na
-					<a href="\"mailto:admin@diplomskiportal.nemanjadjokic.com"\">admin@diplomskiportal.nemanjadjokic.com</a></p>
-					<p>Registrovali ste se sa sledećim podacima:</p>
-					<ul>
-						<li>Korisničko ime: '.$this->input->post('username').'</li>
-						<li>Email: '.$this->input->post('email').'</li>
-						<li>Ime: '.$this->input->post('first_name').'</li>
-						<li>Prezime: '.$this->input->post('last_name').'</li>
-					</ul>';
-					$message .= anchor(base_url().'users/register_user/'.$key);
-					$this->email->message($message);*/
-
 					//generate a random key
 					$key = md5(uniqid());
 
-					//Adding the user data to the users table
-					//$this->users_model->add_user($key);
 					if ($this->users_model->add_user($key)) {
 						$this->load->view('/templates/header', $data);
 						echo 'Succes!';
 						$this->load->view('/templates/footer');
-						/*if($this->email->send()){
-						echo 'Email je poslat. Proverite svoj inbox.';
-					}else{
-						echo 'Email nije poslat. Pisite administratoru na <a href="\"mailto:admin@diplomskiportal.nemanjadjokic.com"\">
-						admin@diplomskiportal.nemanjadjokic.com</a>';
-					}*/
+
 					} else {
 						$this->load->view('/templates/header', $data);
 						echo 'Fail.';
@@ -148,16 +146,12 @@
 					}
 			}
 		}
-
-/*
-			$data['title'] = 'Registrujte novi nalog';
-			$this->load->view('templates/header', $data);
-			$this->load->view('users/register');
-			$this->load->view('templates/footer');*/
 		}
 
 		public function members(){
 			$data['path'] = '/users/members';
+			$data['role'] = $this->role;
+      		$data['role_path'] = $this->role_path;
 			if ($this->session->userdata('is_loged_in')) {
 				$data['title'] = 'Odeljak za članove';
 				$data['username'] = $this->session->userdata('username');
@@ -195,6 +189,8 @@
 			$data['path'] = '/users/members';
 			$this->load->model('users_model');
 			$username = $this->session->userdata('username');
+			$data['role'] = $this->role;
+      		$data['role_path'] = $this->role_path;
 			if ($this->session->userdata('is_loged_in')) {
 				$data['title'] = 'Vaš profil';
 				$data['username'] = $this->session->userdata('username');
@@ -213,6 +209,11 @@
 		{
 			$data['path'] = '/users/members';
 			$data['username'] = $this->session->userdata('username');
+
+            //If user is admin Admin panel will be shown
+            $data['role'] = $this->role;
+            $data['role_path'] = $this->role_path;
+
 			$data['title'] = 'Promenite lozinku';
 
 			$config = array(

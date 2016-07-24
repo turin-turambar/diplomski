@@ -1,6 +1,6 @@
 <?php
 class News extends CI_Controller {
-	
+
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('news_model');
@@ -8,11 +8,14 @@ class News extends CI_Controller {
 
 	public function index(){
 		$data['news'] 	= $this->news_model->get_news();
+		$data['path'] = '/users/members';
 		$data['title']	= 'News archive';
+		$data['role_path']	=	'/admin';
+		$data['role']	=	'Admin panel';
 		if ($this->session->userdata('is_loged_in')) {
 			$data['username'] = $this->session->userdata('username');
 		} else{
-			$data['username'] = null;
+			$data['username'] = "Uloguj se";
 		}
 
 		$this->load->view('templates/header', $data);
@@ -53,7 +56,7 @@ class News extends CI_Controller {
 			$this->load->view('news/success');
 			$this->load->view('templates/footer');
 		}
-		
+
 	}
 }
 ?>

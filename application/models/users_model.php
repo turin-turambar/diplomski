@@ -45,7 +45,7 @@
 
         public function view_user($username)
         {
-            $this->db->select('id, username, first_name, last_name, email, registered');
+            $this->db->select('id, username, first_name, last_name, email, registered, role_id');
             $this->db->where('username', $username);
             $query = $this->db->get('users');
             if ($query->num_rows != 1) {
@@ -61,6 +61,24 @@
           $this->db->where('username', $username);
           $query = $this->db->get('users');
           return $query->row_array();
+        }
+
+        public function admin_change_password($user_id)
+        {
+          $this->load->library('encrypt');
+
+          $this->db->where('id', $user_id);
+
+          $query = $this->db->get('users');
+
+          if ($query->num_rows != 1) {
+            return FALSE;
+          } else {
+              $this->db->set('password', $this->encrypt->encode($this->input->post('password')));
+              $this->db->where('id', $user_id);
+              $this->db->update('users');
+              return TRUE;
+          }
         }
 
         public function change_password($username, $password)
